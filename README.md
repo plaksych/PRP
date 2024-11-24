@@ -13,7 +13,7 @@
 
 ### распознавание
 * open CV
-* yolo model
+* yolo model recognise
 
 ### хранение
 * docker
