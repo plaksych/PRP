@@ -337,5 +337,8 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-#data folder with images for model
+# data folder with images for model
 data/
+
+# data csv file
+data.csv
