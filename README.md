@@ -106,6 +106,43 @@
    - `--data`: Укажите путь к вашему `.yaml` файлу.
    - `--weights`: Используйте предобученные веса. Вы можете выбрать различные версии модели (например, `yolov5s.pt`, `yolov5m.pt` и т.д.).
 
+Training a YOLO (You Only Look Once) model using a GPU can significantly accelerate your training process due to the parallel processing capabilities of GPUs. Below are detailed steps on how to set up your environment and train a YOLO model using GPU resources.
+
+#### Install Required Software
+   - Ensure you have Python installed (preferably version 3.6 to 3.9).
+   - Install PyTorch with GPU support. You can find the appropriate installation command for your system configuration (CUDA version) on the [official PyTorch website](https://pytorch.org/get-started/locally/).
+
+   Example command:
+   ```bash
+   pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
+   ```
+
+#### Train Command
+   - Use the following command to train the YOLO model on your dataset using GPU. Adjust parameters as necessary.
+
+   Example training command for YOLOv5:
+
+   ```bash
+   python train.py --batch 16 --epochs 50 --data config.yaml --weights yolov5s.pt --device 0
+   ```
+
+   - **Parameters**:
+     - `--img`: Specify the image size for training (640 is commonly used).
+     - `--batch`: Set the batch size. Depending on your GPU, you may need to adjust this to avoid running out of memory.
+     - `--epochs`: Total number of training epochs.
+     - `--data`: Path to the dataset YAML file.
+     - `--weights`: Use pre-trained weights (for transfer learning). You can replace `yolov5s.pt` with other model weights (`yolov5m.pt`, `yolov5l.pt`, etc.) as needed.
+     - `--device`: Specify the GPU device; `0` usually refers to the first GPU. Omit this or set to `cpu` to train on CPU.
+
+### Monitor Training
+
+- During training, you can monitor the loss metrics and performance visually through the command-line output, as well as through saved tensorboard logs.
+- You can set up TensorBoard to visualize the training process:
+   ```bash
+   tensorboard --logdir runs/train
+   ```
+   Then visit `http://localhost:6006/` in your web browser.
+
 #### Тестирование и оценка модели
 
 После завершения обучения вы можете протестировать модель на новых изображениях, чтобы убедиться, что она распознает паспорта.
