@@ -9,5 +9,9 @@ val_labels: val/labels  # Add this line if necessary, but YOLOv5 auto-detects if
 # количество классов
 nc: 3  
 
+# list of class names
 # Classes
-names: ['passport', 'cover', 'other']  # list of class names
+names: 
+  0: passport
+  1: cover
+  2: other
