@@ -97,7 +97,7 @@
    
    Используйте следующую команду для запуска процесса обучения:
    ```bash
-   python train.py --img 640 --batch 16 --epochs 50 --data your_data.yaml --weights yolov5s.pt
+   python train.py --batch 16 --epochs 50 --data config.yaml --weights yolov5s.pt
    ```
 
    - `--img`: Размер изображений, на которых вы будете обучаться.
@@ -116,5 +116,5 @@
 Как только вы получили модель, вы можете использовать `detect.py` для распознавания объектов в новых изображениях.
 второй блок файла main.ipynb для распознавания на обученной модели:
 ```bash
-python detect.py --weights runs/train/exp/weights/best.pt --img 640 --conf 0.25 --source path_to_your_image.jpg
+python detect.py --weights runs/train/exp/weights/best.pt --conf 0.25 --source path_to_your_image.jpg
 ```
