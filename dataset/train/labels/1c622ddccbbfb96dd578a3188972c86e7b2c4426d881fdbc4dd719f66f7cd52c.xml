@@ -1,0 +1,26 @@
+<annotation>
+	<folder>паспорт_рф</folder>
+	<filename>1c622ddccbbfb96dd578a3188972c86e7b2c4426d881fdbc4dd719f66f7cd52c.png</filename>
+	<path>C:\Users\plaksych\PRP\dataset\train\images\паспорт_рф\1c622ddccbbfb96dd578a3188972c86e7b2c4426d881fdbc4dd719f66f7cd52c.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>796</width>
+		<height>768</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cover</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>21</xmin>
+			<ymin>24</ymin>
+			<xmax>446</xmax>
+			<ymax>646</ymax>
+		</bndbox>
+	</object>
+</annotation>
