@@ -1,0 +1,13 @@
+path: /dataset  # base path to your dataset directory
+train: train/images  # path to images folder for training
+val: val/images      # path to images folder for validation
+
+# Specify the path to your labels directory
+train_labels: train/labels  # Add this line if necessary, but YOLOv5 auto-detects if formatted well.
+val_labels: val/labels  # Add this line if necessary, but YOLOv5 auto-detects if formatted well.
+
+# количество классов
+nc: 3  
+
+# Classes
+names: ['passport', 'cover', 'other']  # list of class names
