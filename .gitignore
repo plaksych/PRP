@@ -338,7 +338,7 @@ cython_debug/
 #.idea/
 
 # data folder with images for model
-data/
+dataset/
 
 # data csv file
-data.csv
+dataset.csv
