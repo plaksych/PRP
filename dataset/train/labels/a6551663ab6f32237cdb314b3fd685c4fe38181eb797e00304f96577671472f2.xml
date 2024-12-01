@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>a6551663ab6f32237cdb314b3fd685c4fe38181eb797e00304f96577671472f2.png</filename>
+	<path>C:\Users\plaksych\PRP\dataset\train\images\a6551663ab6f32237cdb314b3fd685c4fe38181eb797e00304f96577671472f2.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>653</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cover</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>36</xmin>
+			<ymin>3</ymin>
+			<xmax>604</xmax>
+			<ymax>600</ymax>
+		</bndbox>
+	</object>
+</annotation>

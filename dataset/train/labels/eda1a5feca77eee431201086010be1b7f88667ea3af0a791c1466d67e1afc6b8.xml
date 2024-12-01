@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>eda1a5feca77eee431201086010be1b7f88667ea3af0a791c1466d67e1afc6b8.png</filename>
+	<path>C:\Users\plaksych\PRP\dataset\train\images\eda1a5feca77eee431201086010be1b7f88667ea3af0a791c1466d67e1afc6b8.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1342</width>
+		<height>1920</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>passport</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>73</xmin>
+			<ymin>181</ymin>
+			<xmax>1280</xmax>
+			<ymax>1812</ymax>
+		</bndbox>
+	</object>
+</annotation>

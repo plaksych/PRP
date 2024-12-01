@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>049e804385129e2690b5c3516e64538347b2fd5816a8d7e9f03eeb6c90ccefb5.png</filename>
+	<path>C:\Users\plaksych\PRP\dataset\val\images\049e804385129e2690b5c3516e64538347b2fd5816a8d7e9f03eeb6c90ccefb5.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>900</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cover</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2</xmin>
+			<ymin>17</ymin>
+			<xmax>1280</xmax>
+			<ymax>900</ymax>
+		</bndbox>
+	</object>
+</annotation>
