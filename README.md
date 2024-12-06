@@ -19,13 +19,13 @@
 #### Описание
 
 - Датасет состоит из 100 изображений по запросу 'паспорт рф' и 100 изображений по запросу 'картинки' в dataset/val
-- Для обучения модели отбирается половина изображений 50 c Sпаспортом или обложкой и 50 картинок в dataset/train
+- Для обучения модели датасет разбивается на 20+20 в val и 80+80 в train
 
 ### Распознавание
 
 #### Инструменты
 
-- yolo model recognise
+- yoloV11
 - LabelImg
 
 #### Fixing issues with labelImg:
@@ -74,37 +74,15 @@
 #### Обучение модели YOLO
 
 После создания структуры датасета и разметки, можно приступать к обучению модели:
+Перед обучением необходимо перевести разметку XML в формат yolo
 
 #### Скачивание предобученных весов YOLO
 
-Для данного проекта используется YOLOV5
-
-#### Установка необходимых библиотек
-
-    ```bash
-    git clone https://github.com/ultralytics/yolov5.git
-    cd yolov5
-    pip install -r requirements.txt
-    ```
+Для данного проекта используется YOLOV11
 
 #### Настройка конфигурации 
 
    Для обучения модели необходимо создать файл `config.yaml`
-
-#### Обучение модели
-   файл main.ipynb для запуска обучения модели
-   Параметры обучения модели:
-   
-   Используйте следующую команду для запуска процесса обучения:
-   ```bash
-   python train.py --batch 16 --epochs 50 --data config.yaml --weights yolov5s.pt
-   ```
-
-   - `--img`: Размер изображений, на которых вы будете обучаться.
-   - `--batch`: Размер пакета.
-   - `--epochs`: Количество эпох обучения.
-   - `--data`: Укажите путь к вашему `.yaml` файлу.
-   - `--weights`: Используйте предобученные веса. Вы можете выбрать различные версии модели (например, `yolov5s.pt`, `yolov5m.pt` и т.д.).
 
 Training a YOLO (You Only Look Once) model using a GPU can significantly accelerate your training process due to the parallel processing capabilities of GPUs. Below are detailed steps on how to set up your environment and train a YOLO model using GPU resources.
 
@@ -116,23 +94,6 @@ Training a YOLO (You Only Look Once) model using a GPU can significantly acceler
    ```bash
    pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
    ```
-
-#### Train Command
-   - Use the following command to train the YOLO model on your dataset using GPU. Adjust parameters as necessary.
-
-   Example training command for YOLOv5:
-
-   ```bash
-   python train.py --batch 16 --epochs 50 --data config.yaml --weights yolov5s.pt --device 0
-   ```
-
-   - **Parameters**:
-     - `--img`: Specify the image size for training (640 is commonly used).
-     - `--batch`: Set the batch size. Depending on your GPU, you may need to adjust this to avoid running out of memory.
-     - `--epochs`: Total number of training epochs.
-     - `--data`: Path to the dataset YAML file.
-     - `--weights`: Use pre-trained weights (for transfer learning). You can replace `yolov5s.pt` with other model weights (`yolov5m.pt`, `yolov5l.pt`, etc.) as needed.
-     - `--device`: Specify the GPU device; `0` usually refers to the first GPU. Omit this or set to `cpu` to train on CPU.
 
 ### Monitor Training
 
@@ -146,12 +107,3 @@ Training a YOLO (You Only Look Once) model using a GPU can significantly acceler
 #### Тестирование и оценка модели
 
 После завершения обучения вы можете протестировать модель на новых изображениях, чтобы убедиться, что она распознает паспорта.
-Для этого запустите второй блок main.ipynb указав путь к файлу для распознавания.
-
-#### Использование обученной модели
-
-Как только вы получили модель, вы можете использовать `detect.py` для распознавания объектов в новых изображениях.
-второй блок файла main.ipynb для распознавания на обученной модели:
-```bash
-python detect.py --weights runs/train/exp/weights/best.pt --conf 0.25 --source path_to_your_image.jpg
-```
