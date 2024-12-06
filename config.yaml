@@ -1,17 +1,49 @@
-path: ../dataset  # base path to your dataset directory
-train: train/images  # path to images folder for training
-val: val/images      # path to images folder for validation
+# yolov11_config.yaml
+path: C:\Users\plaksych\PRP\dataset
+train: train
+val: val
 
-# Specify the path to your labels directory
-train_labels: train/labels  # Add this line if necessary, but YOLOv5 auto-detects if formatted well.
-val_labels: val/labels  # Add this line if necessary, but YOLOv5 auto-detects if formatted well.
+# train:
+#   # Path to training data
+#   images: 'train/images'
+#   labels: 'train/labels'
 
-# количество классов
-nc: 3  
+# validation:
+#   # Path to validation data
+#   images: 'val/images'
+#   labels: 'val/labels'
 
-# list of class names
+# Model configuration
+model: yolov11m.pt
+  # architecture: 'yolov11'  # specify the YOLOv11 architecture
+  # # input_size: [640, 640]    # input size of the model
+  # num_classes: 3           # number of classes in your dataset
+  # pretrained: true           # set to true to use pretrained weights
 # Classes
+nc: 3
 names: 
   0: passport
   1: cover
   2: other
+
+# Training hyperparameters
+hyperparameters:
+  epochs: 50                # number of training epochs
+  batch_size: 16            # number of images per batch
+  learning_rate: 0.001      # initial learning rate
+  warmup_epochs: 3          # number of warmup epochs
+  weight_decay: 0.0005      # weight decay for regularization
+  lr_scheduler: true         # whether to use learning rate scheduler
+  save_best_only: true      # save only the best model during training
+
+# Augmentation settings
+augmentation:
+  random_flip: true         # whether to apply random horizontal flip
+  random_scale: true        # whether to apply random scaling
+  mosaic: true              # enable mosaic augmentation
+  rotation: 30              # maximum rotation in degrees
+
+# Logging and checkpointing
+logging:
+  save_dir: './logs'  # directory to save training logs
+  checkpoint_dir: './checkpoints'  # directory to save model checkpoints
